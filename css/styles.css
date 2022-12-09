@@ -50,7 +50,7 @@ img {
 /* ---------UTILITY--------- */
 
 body {
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   font-size: 14px;
   line-height: 1.71;
   letter-spacing: 0.03em;
@@ -122,7 +122,7 @@ body {
 /* LOGO */
 
 .logo {
-  font-family: 'Raleway', sans-serif;
+  font-family: "Raleway", sans-serif;
   font-size: 26px;
   line-height: 1.19;
 
@@ -183,7 +183,7 @@ body {
 }
 
 .current-page:after {
-  content: '';
+  content: "";
   position: absolute;
   bottom: 0;
 
@@ -263,7 +263,7 @@ body {
       var(--hero-gradient-color),
       var(--hero-gradient-color)
     ),
-    url('../images/hero_bg.jpg');
+    url("../images/hero_bg.jpg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -813,7 +813,7 @@ body {
   font-size: 16px;
   line-height: 1.25;
 
-  color: rgba(255, 255, 255, 0.6);
+  color: var(--secondary-color);
 
   background-color: var(--primary-background-color);
   border: 1px solid rgba(255, 255, 255, 0.3);
@@ -826,7 +826,7 @@ body {
   font-size: 16px;
   line-height: 1.25;
 
-  color: rgba(255, 255, 255, 0.6);
+  color: var(--footer-contact-color);
 }
 
 .subscribe-button {
@@ -963,6 +963,8 @@ body {
   display: block;
 
   text-align: left;
+
+  cursor: pointer;
 }
 
 .form-wrap:last-child {
@@ -1080,20 +1082,29 @@ body {
 }
 
 .checkbox {
+  display: inline-block;
+  width: 16px;
+  height: 15px;
   margin-right: 7px;
 
   border: 2px solid #212121;
   border-radius: 2px;
+
+  transition: background 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.checkbox-wrap:hover .checkbox,
-.original-checkbox:focus + .checkbox {
-  border-color: var(--accent-color);
-}
+/* .original-checkbox:focus + .checkbox {
+  box-shadow: 0 0 0 1px black;
+} */
 
 .original-checkbox:checked + .checkbox {
+  background-image: url("../images/icon-check.svg");
   background-color: var(--accent-color);
-  border-color: var(--accent-color);
+  border-color: transparent;
+  background-origin: border-box;
+  box-sizing: cover;
+  background-repeat: no-repeat;
 }
 
 .checkbox-link {
